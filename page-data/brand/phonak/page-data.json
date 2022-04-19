@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-brands-tsx",
+    "path": "/brand/phonak",
+    "result": {"data":{"prismicProductBrands":{"data":{"name":{"text":"Phonak"},"body":[]}},"products":{"nodes":[]}},"pageContext":{"uid":"phonak"}},
+    "staticQueryHashes": ["1257891638"]}

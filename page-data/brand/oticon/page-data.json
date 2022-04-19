@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-brands-tsx",
+    "path": "/brand/oticon",
+    "result": {"data":{"prismicProductBrands":{"data":{"name":{"text":"Oticon"},"body":[]}},"products":{"nodes":[]}},"pageContext":{"uid":"oticon"}},
+    "staticQueryHashes": ["1257891638"]}
