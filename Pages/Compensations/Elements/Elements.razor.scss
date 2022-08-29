@@ -1,0 +1,30 @@
+﻿.table {
+    margin-top: 2rem;
+    thead tr th:first-child {
+        width: 80%;
+    }
+}
+
+.modal {
+    .text-lg {
+        margin-bottom: 0.5rem;
+    }
+    .text-sm {
+        color: var(--gray-500);
+    }
+    form {
+        margin-top: 1.25rem;
+        .textarea {
+            margin-top: 0.75rem;
+        }
+        .select {
+            margin-bottom: 0.75rem;
+        }
+        .toggle--sm {
+            margin-top: 0.75rem;
+        }
+        .description {
+            margin-top: 0.5rem;
+        }
+    }
+}

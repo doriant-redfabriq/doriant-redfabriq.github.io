@@ -1,0 +1,104 @@
+﻿@page "/employees/all"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Employees</PageTitle>
+
+<section class="allEmployees">
+    <div class="allEmployees__header">
+        <h1 class="display-sm">Employees</h1>
+        <p class="text-md">934 Employees listed</p>
+    </div>
+    <div class="allEmployees__actions">
+        <button class="btn-secondary">
+            <svg width="20px" height="20px" class="mr">
+                <use xlink:href="icons/icons.svg#icon-filters"></use>
+            </svg>
+            Filters
+        </button>
+        <div class="input--search">
+            <svg class="input--search_icon" width="20px" height="20px">
+                <use xlink:href="icons/icons.svg#icon-search"></use>
+            </svg>
+            <input type="text" placeholder="Search employee"/>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Contract</th>
+                <th scope="col">Organization</th>
+                <th scope="col">Job</th>
+                <th scope="col">Global package</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr @onclick="() => NavigateToCounterComponent(item)">
+                    <th scope="row">
+                        <div class="d-flex align-items-center">
+                            <p class="avatar--md">@item.InitialsName</p>
+                            <p>@item.Name</p>
+                        </div>
+                    </th>
+                    <td>@item.Location</td>
+                    <td>@item.Contract</td>
+                    <td>@item.Organization</td>
+                    <td>@item.Job</td>
+                    <td>@item.GlobalPackage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@code {
+    List<Item> items = null!;
+
+    private void NavigateToCounterComponent(Item item)
+    {
+        NavigationManager.NavigateTo($"employees/{item.Name}");
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        items = new List<Item>
+        {
+            new Item {
+                Id = 1,
+                InitialsName = "KÖ", 
+                Name = "Kévin Özdemir", 
+                Location = "Poland, Warsaw", 
+                Contract = "External contractor, Fixed",
+                Organization = "BTS\\EVITDEV",
+                Job = "Electrical Engineer",
+                GlobalPackage = "694 707 zł",
+            },
+            new Item {
+                Id = 2, 
+                InitialsName = "DT", 
+                Name = "Dorian Taing", 
+                Location = "Canada, Toronto", 
+                Contract = "Employee, Permanent",
+                Organization = "HRCOM\\EVHRCOM",
+                Job = "Product Engineer",
+                GlobalPackage = "95 415 CA$",
+            },
+        };
+    }
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string? InitialsName { get; set; }
+        public string? Name { get; set; }
+        public string? Location { get; set; }
+        public string? Contract { get; set; }
+        public string? Organization { get; set; }
+        public string? Job { get; set; }
+        public string? GlobalPackage { get; set; }
+    }
+}

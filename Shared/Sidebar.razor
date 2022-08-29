@@ -1,0 +1,146 @@
+﻿<section class="sidebar">
+    <!-- <div class="@NavMenuCssClass" @onclick="ToggleNavMenu"> -->
+        <div class="input--search">
+            <svg class="input--search_icon">
+                <use xlink:href="icons/icons.svg#icon-search"></use>
+            </svg>
+            <input type="text" placeholder="Search"/>
+        </div>
+        <nav class="sidebar__nav">
+            <div class="sidebar__nav-item">
+                <NavLink class="sidebar__nav-link" href="/" Match="NavLinkMatch.All">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-dashboard"></use>
+                    </svg>
+                    Dashboard
+                </NavLink>
+            </div>
+            <div class="sidebar__nav-item">
+                <button class="sidebar__nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-bar-chart"></use>
+                    </svg>
+                    Compensations
+                    <svg class="sidebar__nav-arrow">
+                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <div id="collapse1" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <NavLink href="/compensations/custom-fields">Custom fields</NavLink>
+                        <NavLink href="/compensations/elements">Elements</NavLink>
+                        <NavLink href="/compensations/models">Models</NavLink>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__nav-item">
+                <button class="sidebar__nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-layers"></use>
+                    </svg>
+                    Campaigns
+                    <svg class="sidebar__nav-arrow">
+                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <div id="collapse2" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <NavLink href="/campaigns/list">List</NavLink>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__nav-item">
+                <button class="sidebar__nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-mail"></use>
+                    </svg>
+                    Increase letters
+                    <svg class="sidebar__nav-arrow">
+                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <div id="collapse3" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <NavLink href="/letters/templates">Templates</NavLink>
+                        <NavLink href="/letters/all">Letters</NavLink>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__nav-item">
+                <button class="sidebar__nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-users"></use>
+                    </svg>
+                    Employees
+                    <svg class="sidebar__nav-arrow">
+                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <div id="collapse4" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <NavLink href="/employees/all">All employees</NavLink>
+                        <NavLink href="/employees/benchmark">Benchmark</NavLink>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__nav-item">
+                <NavLink class="sidebar__nav-link" href="reports">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-clipboard"></use>
+                    </svg>
+                    Reports
+                </NavLink>
+            </div>
+            <div class="sidebar__nav-item">
+                <NavLink class="sidebar__nav-link" href="import">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-upload"></use>
+                    </svg>
+                    Data import
+                </NavLink>
+            </div>
+        </nav>
+        <div class="sidebar__footer">
+           <div class="sidebar__nav-item">
+                <NavLink class="sidebar__nav-link" href="guide">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-help"></use>
+                    </svg>
+                    Guide
+                </NavLink>
+            </div>
+            <div class="sidebar__nav-item">
+                <NavLink class="sidebar__nav-link" href="settings">
+                    <svg class="sidebar__nav-icon">
+                        <use xlink:href="icons/icons.svg#icon-settings"></use>
+                    </svg>
+                    Settings
+                </NavLink>
+            </div>
+            <div class="sidebar__footer-user">
+                <img src="images/avatar.png" alt="avatar" />
+                <div class="sidebar__footer-info">
+                    <p class="user-name">Olivia Rhye</p>
+                    <p class="user-email">olivia@gmail.com</p>
+                </div>
+                <button>
+                    <svg class="sidebar__footer-logout">
+                        <use xlink:href="icons/icons.svg#icon-logout"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    <!-- </div> -->
+</section>
+
+@code {
+    private bool collapseNavMenu = true;
+    private bool expandSubNav;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

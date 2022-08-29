@@ -1,0 +1,39 @@
+﻿@page "/register"
+@layout ConnectionLayout
+
+<PageTitle>Register</PageTitle>
+
+<section class="register">
+    <h1 class="register__title display-sm">Welcome</h1>
+    <p class="register__subtitle">Start your 30-day free trial.</p>
+
+    <form class="register__form">
+        <div class="input input-text">
+            <label>Name*</label>
+            <input type="text" placeholder="Enter your name"/>
+        </div>
+        <div class="input input-text">
+            <label>Email*</label>
+            <input type="text" placeholder="Enter your email"/>
+        </div>
+        <div class="input input-password">
+            <label>Password*</label>
+            <input type="password" placeholder="Create a password"/>
+            <span>Must be at least 8 characters.</span>
+        </div>
+        <input type="submit" value="Get started" class="btn-primary"/>
+        <button class="btn-light">
+            <svg>
+                <use xlink:href="icons/icons.svg#icon-google"></use>
+            </svg>
+            Sign up with Google
+        </button>
+    </form>
+
+    <div class="register__link">
+        <p class="text-sm">Already have an account ?</p>
+        <div class="link text-sm">
+            <NavLink href="/login" class="btn-link">Log in</NavLink>
+        </div>
+    </div>
+</section>

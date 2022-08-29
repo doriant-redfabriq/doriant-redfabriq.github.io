@@ -1,0 +1,132 @@
+﻿@page "/employee/{name}"
+
+<PageTitle>Employees</PageTitle>
+
+<section class="employees">
+    <div class="employees__header">
+        <p class="avatar--2xl">KÖ</p>
+        <div>
+            <h1 class="display-sm">@name</h1>
+            <p class="text-md">kevinozdemir@gmail.com</p>
+        </div>
+    </div>
+    <div class="employees__section">
+        <h2 class="text-lg">Identity</h2>
+        <div class="divider"></div>
+
+        <ul class="employees__list">
+            <li>
+                <p class="text-sm employees__list-label">Employee ID</p>
+                <p class="text-md">768</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">First name</p>
+                <p class="text-md">Kévin</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Last name</p>
+                <p class="text-md">Özdemir</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Birthday</p>
+                <p class="text-md">18/07/1999 (23 years old)</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Gender</p>
+                <p class="text-md">Male</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Email</p>
+                <p class="text-md">kevinozdemir@gmail.com</p>
+            </li>
+        </ul>
+    </div>
+    <div class="employees__section">
+        <h2 class="text-lg">Company</h2>
+        <div class="divider"></div>
+
+        <ul class="employees__list">
+            <li>
+                <p class="text-sm employees__list-label">Location</p>
+                <p class="text-md">Poland, Warsaw</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Seniority</p>
+                <p class="text-md">1 year</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Entry date</p>
+                <p class="text-md">05/04/2021</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Working period</p>
+                <p class="text-md">100%</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Contrat type</p>
+                <p class="text-md">External Contractor, Fixed</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Contract start date</p>
+                <p class="text-md">05/04/2021</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Contract end date</p>
+                <p class="text-md">08/05/2022</p>
+            </li>
+        </ul>
+    </div>
+    <div class="employees__section">
+        <h2 class="text-lg">Job</h2>
+        <div class="divider"></div>
+
+        <ul class="employees__list">
+            <li>
+                <p class="text-sm employees__list-label">Name of job</p>
+                <p class="text-md">Electrical Engineer</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Level</p>
+                <p class="text-md">8.1</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Job position</p>
+                <p class="text-md">-</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Job seniority</p>
+                <p class="text-md">0 year</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Contract type</p>
+                <p class="text-md">BTS\EVITDEV</p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Operation manager</p>
+                <p class="text-md">
+                    <span class="avatar--xs">RM</span>
+                    Romain Metayer
+                </p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">Compensation manager</p>
+                <p class="text-md">
+                    <span class="avatar--xs">RM</span>
+                    Romain Metayer
+                </p>
+            </li>
+            <li>
+                <p class="text-sm employees__list-label">HR Manager</p>
+                <p class="text-md">
+                    <span class="avatar--xs">LD</span>
+                    Lilian Durand
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+@code {
+    [Parameter]
+    public string? name { get; set; }
+}

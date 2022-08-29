@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-brands-tsx",
-    "path": "/brand/signia",
-    "result": {"data":{"prismicProductBrands":{"data":{"name":{"text":"Signia"},"body":[]}},"products":{"nodes":[]}},"pageContext":{"uid":"signia"}},
-    "staticQueryHashes": ["1257891638"]}

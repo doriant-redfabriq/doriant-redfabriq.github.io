@@ -1,0 +1,41 @@
+﻿.register {
+    &__title {
+        outline: none;
+        margin-bottom: 0.75rem;
+    }
+    &__subtitle {
+        color: var(--gray-500);
+    }
+    &__form {
+        margin-top: 2rem;
+        .input {
+            &:not(:last-of-type) {
+                margin-bottom: 1.25rem;
+            }
+        }
+        .btn-primary {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        .btn-light {
+            margin-top: 1rem;
+            width: 100%;
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 0.75rem;
+            }
+        }
+    }
+    &__link {
+        margin-top: 2rem;
+        color: var(--gray-500);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .link {
+            margin-left: 4px;
+            display: inline-block; 
+        }
+    }
+}

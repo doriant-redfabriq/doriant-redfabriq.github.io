@@ -1,0 +1,110 @@
+﻿@page "/letters/all"
+
+<PageTitle>Letters</PageTitle>
+
+<section class="campaignsList">
+    <div class="d-flex justify-content-between">
+        <h1 class="display-sm">Letters</h1>
+        <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#createCustomFieldModal">
+            <svg width="20px" height="20px">
+                <use xlink:href="icons/icons.svg#icon-download"></use>
+            </svg>
+            Download all
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="createCustomFieldModal" tabindex="-1" aria-labelledby="createCustomFieldModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="circle-primary">
+                            <svg width="20px" height="20px">
+                                <use xlink:href="icons/icons.svg#icon-pencil"></use>
+                            </svg>
+                        </div>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <svg width="24px" height="24px">
+                                <use xlink:href="icons/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-lg">(1/2) Create new custom field</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet velit ipsum</p>
+                        <form>
+                            <div class="input input-text">
+                                <label>Element name</label>
+                                <input type="text" placeholder="Enter element name"/>
+                            </div>
+                            <div class="textarea">
+                                <label>Description</label>
+                                <textarea placeholder="Enter description" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table" data-toggle="table"  data-click-to-select="true">
+        <thead>
+            <tr>
+                <!-- <th data-field="state" data-checkbox="true"></th> -->
+                <th data-field="campaignName" scope="col">Campaign name</th>
+                <th data-field="effectiveDate" scope="col">Effective date</th>
+                <th data-field="description" scope="col">Description</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <!-- <th data-field="state" data-checkbox="true"></th> -->
+                    <th data-field="campaignName" scope="row">@item.CampaignName</th>
+                    <td data-field="effectiveDate">@item.EffectiveDate</td>
+                    <td data-field="description">@item.Description</td>
+                    <td>
+                        <svg width="20px" height="20px" @onclick="@(() => Remove(item))" class="actions">
+                            <use xlink:href="icons/icons.svg#icon-trash"></use>
+                        </svg>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@code {
+    List<Item> items = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        items = new List<Item>
+    {
+            new Item {
+                Id = 1, 
+                CampaignName = "Increase letter", 
+                EffectiveDate = "04/06/2022", 
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing"
+            },
+        };
+    }
+
+    void Remove(Item item) => Console.WriteLine($"Remove item: {item.CampaignName}");
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string? CampaignName { get; set; }
+        public string? EffectiveDate { get; set; }
+        public string? Description { get; set; }
+    }
+}
+

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vT85pMmXzQ1YivN8WPCOMFF7ilarci095AqslnuGaS7VwJG4yOxbK/ZffMcqOkZ5DH93c7r6c9iNCA4V2Y6ngw==",
+  "success": true,
+  "projectFilePath": "/Users/doriantaing/Documents/Projects/BlazorApp/BlazorApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/doriantaing/.nuget/packages/libsassbuilder/2.0.2/libsassbuilder.2.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

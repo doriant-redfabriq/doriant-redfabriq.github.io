@@ -1,0 +1,40 @@
+﻿.reports {
+    .nav {
+        margin-top: 1.5rem;
+        &-tabs {
+            border-color: var(--gray-200);
+        }
+        &-link {
+            padding: 0 0 1rem;
+            border: none;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0;
+            &.active {
+                color: var(--primary-700);
+                &::after {
+                    content: '';
+                    height: 2px;
+                    width: 100%;
+                    background: var(--primary-700);
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                }
+            }
+        }
+        &-item {
+            position: relative;
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    .table {
+        margin-top: 2rem;
+        .avatar--md {
+            margin-right: 0.75rem;
+        }
+    }
+}

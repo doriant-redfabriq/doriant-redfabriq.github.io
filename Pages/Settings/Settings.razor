@@ -1,0 +1,329 @@
+﻿@page "/settings"
+
+<PageTitle>Settings</PageTitle>
+
+<section class="reports">
+    <div class="d-flex justify-content-between">
+        <h1 class="display-sm">Settings</h1>
+        <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#uploadFile">
+            <svg width="20px" height="20px">
+                <use xlink:href="icons/icons.svg#icon-plus"></use>
+            </svg>
+            Create account
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="uploadFile" tabindex="-1" aria-labelledby="uploadFile" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="text-lg">Upload and attach files</p>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <svg width="24px" height="24px">
+                                <use xlink:href="icons/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-sm">Upload and attach files to describe the custom fields</p>
+                        <div class="modal-upload">
+                            <div class="circle-gray">
+                                <svg width="20px" height="20px">
+                                    <use xlink:href="icons/icons.svg#icon-upload-cloud"></use>
+                                </svg>
+                            </div>
+                            <p class="text-sm"><span>Click to upload</span> or drag and drop</p>
+                            <p class="text-xs">DOCX (max. 800x400px)</p>
+                            <input type="file" />
+                        </div>
+                        <form>
+                            <div class="input input-text">
+                                <label>Template name</label>
+                                <input type="text" placeholder="Enter your template name"/>
+                            </div>
+                            <div class="textarea">
+                                <label>Description</label>
+                                <textarea placeholder="Enter description" />
+                            </div>
+                            <div class="input input-text">
+                                <label>Choose employees linked with this template</label>
+                                <input type="text" placeholder="Placeholder" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Attach files</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="settingsTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="user-management-tab" data-bs-toggle="tab" data-bs-target="#user-management" type="button" role="tab" aria-controls="user-management" aria-selected="true">User management</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="currency-tab" data-bs-toggle="tab" data-bs-target="#currency" type="button" role="tab" aria-controls="currency" aria-selected="false">Currency & Rates</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button" role="tab" aria-controls="notifications" aria-selected="false">Notifications</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="advanced-tab" data-bs-toggle="tab" data-bs-target="#advanced" type="button" role="tab" aria-controls="advanced" aria-selected="false">Advanced Settings</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="settingsTabContent">
+        <div class="tab-pane fade show active" id="user-management" role="tabpanel" aria-labelledby="user-management-tab">
+            <div class="table__filters">
+                <button class="btn-secondary">
+                    <svg width="20px" height="20px" class="mr">
+                        <use xlink:href="icons/icons.svg#icon-filters"></use>
+                    </svg>
+                    Filters
+                </button>
+                <div class="input--search">
+                    <svg class="input--search_icon" width="20px" height="20px">
+                        <use xlink:href="icons/icons.svg#icon-search"></use>
+                    </svg>
+                    <input type="text" placeholder="Search employee"/>
+                </div>
+            </div>
+             <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Email adress</th>
+                        <th scope="col">Role</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @foreach (var item in items)
+                    {
+                        <tr>
+                            <th scope="row" width="50%">
+                                <div class="d-flex align-items-center">
+                                    <p class="avatar--md">@item.InitialsName</p>
+                                    <p>@item.Name</p>
+                                </div>
+                            </th>
+                            <td>@item.EmailAddress</td>
+                            <td>@item.Role</td>
+                            <td class="dropdown">
+                                <button class="btn-dots" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="24px" height="24px" class="actions">
+                                        <use xlink:href="icons/icons.svg#icon-dots-vertical"></use>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="currency" role="tabpanel" aria-labelledby="currency-tab">
+            <div class="table__filters">
+                <button class="btn-secondary">
+                    <svg width="20px" height="20px" class="mr">
+                        <use xlink:href="icons/icons.svg#icon-filters"></use>
+                    </svg>
+                    Filters
+                </button>
+                <div class="input--search">
+                    <svg class="input--search_icon" width="20px" height="20px">
+                        <use xlink:href="icons/icons.svg#icon-search"></use>
+                    </svg>
+                    <input type="text" placeholder="Search employee"/>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Email adress</th>
+                        <th scope="col">Role</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @foreach (var item in items)
+                    {
+                        <tr>
+                            <th scope="row" width="50%">
+                                <div class="d-flex align-items-center">
+                                    <p class="avatar--md">@item.InitialsName</p>
+                                    <p>@item.Name</p>
+                                </div>
+                            </th>
+                            <td>@item.EmailAddress</td>
+                            <td>@item.Role</td>
+                            <td class="dropdown">
+                                <button class="btn-dots" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="24px" height="24px" class="actions">
+                                        <use xlink:href="icons/icons.svg#icon-dots-vertical"></use>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+            <div class="table__filters">
+                <button class="btn-secondary">
+                    <svg width="20px" height="20px" class="mr">
+                        <use xlink:href="icons/icons.svg#icon-filters"></use>
+                    </svg>
+                    Filters
+                </button>
+                <div class="input--search">
+                    <svg class="input--search_icon" width="20px" height="20px">
+                        <use xlink:href="icons/icons.svg#icon-search"></use>
+                    </svg>
+                    <input type="text" placeholder="Search employee"/>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Email adress</th>
+                        <th scope="col">Role</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @foreach (var item in items)
+                    {
+                        <tr>
+                            <th scope="row" width="50%">
+                                <div class="d-flex align-items-center">
+                                    <p class="avatar--md">@item.InitialsName</p>
+                                    <p>@item.Name</p>
+                                </div>
+                            </th>
+                            <td>@item.EmailAddress</td>
+                            <td>@item.Role</td>
+                            <td class="dropdown">
+                                <button class="btn-dots" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="24px" height="24px" class="actions">
+                                        <use xlink:href="icons/icons.svg#icon-dots-vertical"></use>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+            <div class="table__filters">
+                <button class="btn-secondary">
+                    <svg width="20px" height="20px" class="mr">
+                        <use xlink:href="icons/icons.svg#icon-filters"></use>
+                    </svg>
+                    Filters
+                </button>
+                <div class="input--search">
+                    <svg class="input--search_icon" width="20px" height="20px">
+                        <use xlink:href="icons/icons.svg#icon-search"></use>
+                    </svg>
+                    <input type="text" placeholder="Search employee"/>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Email adress</th>
+                        <th scope="col">Role</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                     @foreach (var item in items)
+                    {
+                        <tr>
+                            <th scope="row" width="50%">
+                                <div class="d-flex align-items-center">
+                                    <p class="avatar--md">@item.InitialsName</p>
+                                    <p>@item.Name</p>
+                                </div>
+                            </th>
+                            <td>@item.EmailAddress</td>
+                            <td>@item.Role</td>
+                            <td class="dropdown">
+                                <button class="btn-dots" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="24px" height="24px" class="actions">
+                                        <use xlink:href="icons/icons.svg#icon-dots-vertical"></use>
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@code {
+    List<Item> items = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        items = new List<Item>
+        {
+            new Item {
+                Id = 1, 
+                InitialsName = "KÖ", 
+                Name = "Kévin Özdemir", 
+                EmailAddress = "kevinozdemir@gmail.com",
+                Role = "Admin",
+            },
+            new Item {
+                Id = 2, 
+                InitialsName = "DT", 
+                Name = "Dorian Taing", 
+                EmailAddress = "doriantaing@gmail.com",
+                Role = "Manager, Validator",
+            },
+        };
+    }
+
+    void Download(Item item) => Console.WriteLine($"Download report: {item.Name}");
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string? InitialsName { get; set; }
+        public string? Name { get; set; }
+        public string? EmailAddress { get; set; }
+        public string? Role { get; set; }
+    }
+}
+

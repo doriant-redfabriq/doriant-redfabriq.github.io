@@ -1,0 +1,190 @@
+﻿@page "/campaigns/list"
+
+<PageTitle>Campaigns List</PageTitle>
+
+<section class="campaignsList">
+    <div class="d-flex justify-content-between">
+        <h1 class="display-sm">Campaigns List</h1>
+        <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#createCustomFieldModal">
+            <svg width="20px" height="20px">
+                <use xlink:href="icons/icons.svg#icon-plus"></use>
+            </svg>
+            Draft new campaign
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="createCustomFieldModal" tabindex="-1" aria-labelledby="createCustomFieldModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="circle-primary">
+                            <svg width="20px" height="20px">
+                                <use xlink:href="icons/icons.svg#icon-pencil"></use>
+                            </svg>
+                        </div>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <svg width="24px" height="24px">
+                                <use xlink:href="icons/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-lg">(1/2) Create new custom field</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet velit ipsum</p>
+                        <form>
+                            <div class="input input-text">
+                                <label>Element name</label>
+                                <input type="text" placeholder="Enter element name"/>
+                            </div>
+                            <div class="textarea">
+                                <label>Description</label>
+                                <textarea placeholder="Enter description" />
+                            </div>
+                        </form>
+
+                        <!-- 2/2 -->
+                        <!-- <p class="text-lg">(2/2) Create new custom field</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet velit ipsum</p>
+                        <form>
+                            <div class="select">
+                                <label>Select type</label>
+                                <select>
+                                    <option value="choices" selected>Choices</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                            <div class="input input-text">
+                                <input type="text" placeholder="1;2;3"/>
+                            </div>
+                            <p class="text-sm description">For each value of the list please separate with a semi-colon : ';'</p>
+                            <div class="toggle--sm">
+                                <input type="checkbox" checked data-toggle="toggle" data-width="100" data-height="75">
+                                <label>The field needs an history</label>
+                            </div>
+                        </form> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Campaign name</th>
+                <th scope="col">Start</th>
+                <th scope="col">End</th>
+                <th scope="col">Effective</th>
+                <th scope="col">Employees</th>
+                <th scope="col">Budget</th>
+                <th scope="col">Used</th>
+                <th scope="col">Remaining</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <th scope="row">@item.CampaignName</th>
+                    <td>@item.Start</td>
+                    <td>@item.End</td>
+                    <td>@item.Effective</td>
+                    <td>@item.Employees</td>
+                    <td>@item.Budget</td>
+                    <td>
+                        @if (@item.Used == null) 
+                        {
+                            <span>-</span>
+                        } 
+                        else 
+                        {
+                            @item.Used
+                        }
+                    </td>
+                    <td>
+                        @if (@item.Remaining == null) 
+                        {
+                            <span>-</span>
+                        } 
+                        else 
+                        {
+                            @item.Remaining
+                        }
+                    </td>
+                    <td>
+                        @if (@item.Status == "Active") {
+                            <p class="badge-success">Active</p>
+                        } else {
+                            <p class="badge-gray">Closed</p>
+                        }
+                    </td>
+                    <td class="dropdown">
+                        <button class="btn-dots" type="button" id="dropdownActions" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg width="24px" height="24px" class="actions">
+                                <use xlink:href="icons/icons.svg#icon-dots-vertical"></use>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@code {
+    List<Item> items = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        items = new List<Item>
+        {
+            new Item {
+                Id = 1, 
+                CampaignName = "Campaign demo", 
+                Start = 1007,
+                End = 1007,
+                Effective = "05/07/2022",
+                Employees = 6,
+                Budget = "300 000€",
+                Status = "Active",
+            },
+            new Item {
+                Id = 2, 
+                CampaignName = "Review AU", 
+                Start = 994,
+                End = 994,
+                Effective = "04/06/2022",
+                Employees = 5,
+                Budget = "300 000€",
+                Used = "51 199€",
+                Status = "Closed",
+            },
+        };
+    }
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string? CampaignName { get; set; }
+        public int? Start { get; set; }
+        public int? End { get; set; }
+        public string? Effective { get; set; }
+        public int? Employees { get; set; }
+        public string? Budget { get; set; }
+        public string? Used { get; set; }
+        public string? Remaining { get; set; }
+        public string? Status { get; set; }
+    }
+}

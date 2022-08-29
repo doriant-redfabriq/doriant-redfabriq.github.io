@@ -1,0 +1,116 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorApp
+build_property.RootNamespace = BlazorApp
+build_property.ProjectDir = /Users/doriantaing/Documents/Projects/BlazorApp/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/doriantaing/Documents/Projects/BlazorApp
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Campaigns/List/List.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FtcGFpZ25zL0xpc3QvTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-a4vgx6deai
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Compensations/CustomFields/CustomFields.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcGVuc2F0aW9ucy9DdXN0b21GaWVsZHMvQ3VzdG9tRmllbGRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-vid8vgr42a
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Compensations/Elements/Elements.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29tcGVuc2F0aW9ucy9FbGVtZW50cy9FbGVtZW50cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3nohy44sti
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Connection/ForgotPassword/ForgotPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29ubmVjdGlvbi9Gb3Jnb3RQYXNzd29yZC9Gb3Jnb3RQYXNzd29yZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-53gb3qajyu
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Connection/Login/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29ubmVjdGlvbi9Mb2dpbi9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-q0xoexaj0o
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Connection/Register/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29ubmVjdGlvbi9SZWdpc3Rlci9SZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-a2vby9731u
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Connection/ResetPassword/ResetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29ubmVjdGlvbi9SZXNldFBhc3N3b3JkL1Jlc2V0UGFzc3dvcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-u46vbs0f9j
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Employees/AllEmployees/AllEmployees.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW1wbG95ZWVzL0FsbEVtcGxveWVlcy9BbGxFbXBsb3llZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-4xss2pg0wp
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Employees/Employee/Employee.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW1wbG95ZWVzL0VtcGxveWVlL0VtcGxveWVlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-nd7p8cibmc
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Index/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3n0k7vx6bw
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Letters/AllLetters/AllLetters.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGV0dGVycy9BbGxMZXR0ZXJzL0FsbExldHRlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bvknvn6emz
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Letters/Templates/Templates.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGV0dGVycy9UZW1wbGF0ZXMvVGVtcGxhdGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-azexwj5whd
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Reports/Reports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9SZXBvcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-emsrahk77w
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Settings/Settings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2V0dGluZ3MvU2V0dGluZ3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-y9obyezydd
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Shared/ConnectionLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0Nvbm5lY3Rpb25MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-k5n75coni5
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3ij3p7wwc4
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Shared/Sidebar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1NpZGViYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wikguf3prv
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/doriantaing/Documents/Projects/BlazorApp/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

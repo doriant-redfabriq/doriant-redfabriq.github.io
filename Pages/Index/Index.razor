@@ -1,0 +1,218 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Dashboard</PageTitle>
+
+<div class="dashboard">
+    <h1 class="display-sm">Dashboard</h1>
+    <section class="dashboard__filters">
+        <button class="btn-secondary">
+            <svg>
+                <use xlink:href="icons/icons.svg#icon-filters"></use>
+            </svg>
+            Filters
+        </button>
+        <div class="toggle">
+            <input type="checkbox" checked data-toggle="toggle" data-width="100" data-height="75">
+            <label>Social taxes</label>
+        </div>
+    </section>
+    <ul class="dashboard__overview">
+        <li class="dashboard__overview-item">
+            <div class="dashboard__overview-icon">
+                <svg>
+                    <use xlink:href="icons/icons.svg#icon-wallet"></use>
+                </svg>
+            </div>
+            <div class="dashboard__overview-content">
+                <p class="text-sm">New total mass</p>
+                <h3 class="display-xs">1 246 282€</h3>
+            </div>
+        </li>
+        <li class="dashboard__overview-item">
+            <div class="dashboard__overview-icon">
+                <svg>
+                    <use xlink:href="icons/icons.svg#icon-users"></use>
+                </svg>
+            </div>
+            <div class="dashboard__overview-content">
+                <p class="text-sm">Employees</p>
+                <h3 class="display-xs">27</h3>
+            </div>
+        </li>
+        <li class="dashboard__overview-item">
+            <div class="dashboard__overview-icon">
+                <svg>
+                    <use xlink:href="icons/icons.svg#icon-users"></use>
+                </svg>
+            </div>
+            <div class="dashboard__overview-content">
+                <p class="text-sm">Managers</p>
+                <h3 class="display-xs">12</h3>
+            </div>
+        </li>
+    </ul>
+    <section class="dashboard__budget">
+        <div class="dashboard__budget-heading">
+            <p class="text-lg">Campaign budget</p>
+            <p class="display-xs">300 000€</p>
+        </div>
+        <p class="text-sm">Lorem ipsum</p>
+        <div class="dashboard__budget-progress">
+            <p class="text-sm">Remaining 195 248€</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    <p class="progress-info">104 752€ used</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <ul class="dashboard__salaries">
+        <li class="dashboard__salaries-card card__salary">
+            <div class="card__salary-chart">
+                <canvas id="chart-salary" width="120" height="120"></canvas>
+            </div>
+            <div class="card__salary-content">
+                <div class="card__salary-head">
+                    <p class="text-md">Salary</p>
+                    <p class="badge-gray">46% used</p>
+                </div>
+                <div class="card__salary-legend">
+                    <p class="primary-color">Used</p>
+                    <p class="secondary-color">Remaining</p>
+                </div>
+                <p class="display-xs">82 996€ / 97 004€</p>
+            </div>
+        </li>
+        <li class="dashboard__salaries-card card__salary">
+            <div class="card__salary-chart">
+                <canvas id="chart-variable-salary" width="120" height="120"></canvas>
+            </div>
+            <div class="card__salary-content">
+                <div class="card__salary-head">
+                    <p class="text-md">Variable salary</p>
+                    <p class="badge-gray">18% used</p>
+                </div>
+                <div class="card__salary-legend">
+                    <p class="primary-color">Used</p>
+                    <p class="secondary-color">Remaining</p>
+                </div>
+                <p class="display-xs">21 756€ / 98 244€</p>
+            </div>
+        </li>
+    </ul>
+    <section class="dashboard__budgetChart">
+        <div class="dashboard__budgetChart-head">
+            <h2 class="text-lg">Realtime bugdet chart</h2>
+            <div class="select">
+                <div class="select__content">
+                    <select placeholder="Type">
+                        <option value="job">Job</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <svg class="select__icon" width="20" height="20">
+                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__budgetChart-chart">
+            <canvas id="chart-realtime-budget" />
+        </div>
+    </section>
+    <section class="dashboard__job">
+        <div class="input--search">
+            <svg class="input--search_icon">
+                <use xlink:href="icons/icons.svg#icon-search"></use>
+            </svg>
+            <input type="text" placeholder="Search"/>
+        </div>
+        <table
+            class="table"
+            data-toggle="table"
+            data-height="460"
+            data-pagination="true"
+        >
+            <thead>
+                <tr>
+                    <th data-field="job">Job</th>
+                    <th data-field="salary">Salary</th>
+                    <th data-field="variableSalary">Variable salary</th>
+                    <th data-field="total">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" data-field="job">Community Outreach Specialist</th>
+                    <td data-field="salary">14 684€</td>
+                    <td data-field="variableSalary">1 037€</td>
+                    <td  data-field="total">15 507€</td>
+                </tr>
+                <tr>
+                    <th scope="row" data-field="job">Community Outreach Specialist</th>
+                    <td data-field="salary">14 684€</td>
+                    <td data-field="variableSalary">1 037€</td>
+                    <td  data-field="total">15 507€</td>
+                </tr>
+                <tr>
+                    <th scope="row" data-field="job">Community Outreach Specialist</th>
+                    <td data-field="salary">14 684€</td>
+                    <td data-field="variableSalary">1 037€</td>
+                    <td  data-field="total">15 507€</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="dashboard__genderEquity">
+        <h2 class="text-lg">Gender equity analysis</h2>
+        <div class="dashboard__genderEquity-divider"></div>
+        <ul class="dashboard__genderEquity-list">
+            <li class="dashboard__genderEquity-item card__salary">
+                <div class="card__salary-chart">
+                    <canvas id="chart-gender-equity-1" width="60" height="60"></canvas>
+                </div>
+                <div class="card__salary-content">
+                    <div class="card__salary-head">
+                        <p class="text-md">Salary total amount</p>
+                    </div>
+                    <div class="card__salary-legend">
+                        <p class="primary-color">Male</p>
+                        <p class="secondary-color">Female</p>
+                    </div>
+                    <p class="display-xs">352 684€ / 623 517€</p>
+                </div>
+            </li>
+            <li class="dashboard__genderEquity-item card__salary">
+                <div class="card__salary-chart">
+                    <canvas id="chart-gender-equity-2" width="60" height="60"></canvas>
+                </div>
+                <div class="card__salary-content">
+                    <div class="card__salary-head">
+                        <p class="text-md">Salary total increase</p>
+                    </div>
+                    <div class="card__salary-legend">
+                        <p class="primary-color">Male</p>
+                        <p class="secondary-color">Female</p>
+                    </div>
+                    <p class="display-xs">36 635€ / 51 962€</p>
+                </div>
+            </li>
+            <li class="dashboard__genderEquity-item card__salary">
+                <div class="card__salary-chart">
+                    <canvas id="chart-gender-equity-3" width="60" height="60"></canvas>
+                </div>
+                <div class="card__salary-content">
+                    <div class="card__salary-head">
+                        <p class="text-md">Salary increase percent</p>
+                    </div>
+                    <div class="card__salary-legend">
+                        <p class="primary-color">Male</p>
+                        <p class="secondary-color">Female</p>
+                    </div>
+                    <p class="display-xs">11,59% / 9,09%</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>

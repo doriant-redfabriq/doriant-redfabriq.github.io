@@ -1,0 +1,157 @@
+﻿@page "/compensations/elements"
+
+<PageTitle>Elements</PageTitle>
+
+<section class="elements">
+    <div class="d-flex justify-content-between">
+        <h1 class="display-sm">Compensation elements</h1>
+        <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#createElementModal">
+            <svg width="20px" height="20px">
+                <use xlink:href="icons/icons.svg#icon-plus"></use>
+            </svg>
+            New element
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="createElementModal" tabindex="-1" aria-labelledby="createElementModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="circle-primary">
+                            <svg width="20px" height="20px">
+                                <use xlink:href="icons/icons.svg#icon-pencil"></use>
+                            </svg>
+                        </div>
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <svg width="24px" height="24px">
+                                <use xlink:href="icons/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <p class="text-lg">(1/2) Create new element</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet velit ipsum</p>
+                        <form>
+                            <div class="input input-text">
+                                <label>Element name</label>
+                                <input type="text" placeholder="Enter element name"/>
+                            </div>
+                            <div class="textarea">
+                                <label>Description</label>
+                                <textarea placeholder="Enter description" />
+                            </div>
+                        </form> -->
+
+                        <!-- 2/2 -->
+                        <p class="text-lg">(2/2) Create new element</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet velit ipsum</p>
+                        <form>
+                            <div class="select">
+                                <label>Select type</label>
+                                <div class="select__content">
+                                    <select placeholder="Type">
+                                        <option value="choices">Choices</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <svg class="select__icon" width="20" height="20">
+                                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="select">
+                                <label>Select period</label>
+                                <div class="select__content">
+                                    <select>
+                                        <option value="period">Period</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <svg class="select__icon" width="20" height="20">
+                                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="select">
+                                <label>Select frequency</label>
+                                <div class="select__content">
+                                    <select>
+                                        <option value="frequency">Frequency</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <svg class="select__icon" width="20" height="20">
+                                        <use xlink:href="icons/icons.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Element</th>
+                <th scope="col">Assigned to</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <th scope="row">@item.Element</th>
+                    <td>@item.AssignedTo</td>
+                    <td>
+                        <svg width="20px" height="20px" class="actions">
+                            <use xlink:href="icons/icons.svg#icon-download"></use>
+                        </svg>
+                    </td>
+                    <td>
+                        <svg width="20px" height="20px" class="actions">
+                            <use xlink:href="icons/icons.svg#icon-clock"></use>
+                        </svg>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@code {
+    List<Item> items = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        items = new List<Item>
+        {
+            new Item {
+                Id = 1, 
+                Element = "BUM", 
+                AssignedTo = 1007, 
+            },
+            new Item {
+                Id = 2, 
+                Element = "CM+1", 
+                AssignedTo = 994, 
+            },
+        };
+    }
+
+    class Item
+    {
+        public int Id { get; set; }
+        public string? Element { get; set; }
+        public int? AssignedTo { get; set; }
+    }
+}

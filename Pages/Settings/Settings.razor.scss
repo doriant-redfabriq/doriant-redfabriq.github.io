@@ -1,0 +1,14 @@
+﻿.reports {
+    .table {
+        margin-top: 2rem;
+        .avatar--md {
+            margin-right: 0.75rem;
+        }
+        &__filters {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0 1.5rem;
+        }
+    }
+}

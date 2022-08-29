@@ -1,0 +1,12 @@
+﻿.table {
+    margin-top: 2rem;
+    thead tr th {
+        &:first-child {
+            width: 50%;
+        }
+        &:nth-last-child(2) {
+            width: auto;
+            padding: 0.875rem 1.5rem;
+        }
+    }
+}

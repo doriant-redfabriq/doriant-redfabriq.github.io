@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-brands-tsx",
-    "path": "/brand/starkey",
-    "result": {"data":{"prismicProductBrands":{"data":{"name":{"text":"Starkey"},"body":[]}},"products":{"nodes":[]}},"pageContext":{"uid":"starkey"}},
-    "staticQueryHashes": ["1257891638"]}
